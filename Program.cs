@@ -46,10 +46,28 @@ namespace linq
                 orderby name descending
                 select name;
 
+            List<string> namesInOrder = new List<string>();
             foreach (string name in descend)
             {
-                System.Console.WriteLine(name);
+                namesInOrder.Add(name);
             }
+            System.Console.WriteLine(String.Join(",", namesInOrder));
+
+
+            List<int> numbersList = new List<int>()
+        {
+            15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+        };
+
+        IEnumerable<int> sortedNumbers = from number in numbersList
+            orderby number ascending
+            select number;
+
+        foreach (int number in sortedNumbers)
+        {
+            System.Console.WriteLine(number);
         }
+        }
+
     }
 }
