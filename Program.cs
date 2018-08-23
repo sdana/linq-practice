@@ -30,6 +30,26 @@ namespace linq
             {
                 System.Console.WriteLine($"{number} is divisble by either 4 or 6");
             }
+
+
+            // Order these student names alphabetically, in descending order (Z to A)
+            List<string> names = new List<string>()
+            {
+                "Heather", "James", "Xavier", "Michelle", "Brian", "Nina",
+                "Kathleen", "Sophia", "Amir", "Douglas", "Zarley", "Beatrice",
+                "Theodora", "William", "Svetlana", "Charisse", "Yolanda",
+                "Gregorio", "Jean-Paul", "Evangelina", "Viktor", "Jacqueline",
+                "Francisco", "Tre"
+            };
+
+            IEnumerable<string> descend = from name in names
+                orderby name descending
+                select name;
+
+            foreach (string name in descend)
+            {
+                System.Console.WriteLine(name);
+            }
         }
     }
 }
