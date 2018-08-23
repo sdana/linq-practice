@@ -54,20 +54,28 @@ namespace linq
             System.Console.WriteLine(String.Join(",", namesInOrder));
 
 
-            List<int> numbersList = new List<int>()
+                List<int> numbersList = new List<int>()
+            {
+                15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+            };
+
+            IEnumerable<int> sortedNumbers = from number in numbersList
+                orderby number ascending
+                select number;
+
+            foreach (int number in sortedNumbers)
+            {
+                System.Console.WriteLine(number);
+            }
+
+            // Output how many numbers are in this list
+        List<int> numbersList2 = new List<int>()
         {
             15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
         };
 
-        IEnumerable<int> sortedNumbers = from number in numbersList
-            orderby number ascending
-            select number;
-
-        foreach (int number in sortedNumbers)
-        {
-            System.Console.WriteLine(number);
+        int howMany = numbersList2.Count();
+        System.Console.WriteLine(howMany);
         }
-        }
-
     }
 }
